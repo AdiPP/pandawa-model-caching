@@ -7,6 +7,7 @@ namespace Pandawa\ModelCaching\Model;
 
 use GeneaLabs\LaravelModelCaching\CachedBelongsToMany;
 use GeneaLabs\LaravelModelCaching\Traits\Cachable as BaseCachable;
+use GeneaLabs\LaravelModelCaching\Traits\ModelCaching;
 use Illuminate\Database\Eloquent\Builder as BaseBuilder;
 use Illuminate\Database\Eloquent\Model as BaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany as BaseBelongsToMany;
@@ -20,7 +21,6 @@ use Pandawa\Component\Ddd\Relationship\BelongsToMany;
  */
 trait Cachable
 {
-    use ModelCaching;
     use BaseCachable {
         ModelCaching::newEloquentBuilder insteadof BaseCachable;
     }
